@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Etiquetas</title>
+    <link rel="stylesheet" href="styleusuario.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <div class="logo-circle">S/E</div>
+                <h1>Solo Etiquetas</h1>
+            </div>
+            <div class="header-nav">
+                <input type="search" placeholder="Buscar...">
+                <a href="#">Ayuda</a>
+                <a href="#">Mi Cuenta</a>
+                <a href="#">Mi Compra</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="image-placeholder">
+           <img src="logo2.jpg" alt="Logo de Impresión de Etiquetas">
+            </div>
+
+        <h1>Gestión de Usuarios y Pedidos</h1>
+
+        <div id="auth-section">
+            <div class="form-card">
+                <h2>Registrar Usuario</h2>
+                <form id="registro-form">
+                    <input type="text" id="reg-nombre" placeholder="Nombre" required>
+                    <input type="text" id="reg-apellido" placeholder="Apellido" required>
+                    <input type="email" id="reg-email" placeholder="Email" required>
+                    <input type="password" id="reg-contrasena" placeholder="Contraseña" required>
+                    <input type="text" id="reg-direccion" placeholder="Dirección (Solo Cliente)">
+                    <input type="text" id="reg-telefono" placeholder="Teléfono (Solo Cliente)">
+                    <select id="reg-tipo-usuario">
+                        <option value="cliente">Cliente</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                    <input type="text" id="reg-cargo" placeholder="Cargo (Solo Admin)" style="display:none;">
+                    <input type="text" id="reg-turno" placeholder="Turno (Solo Admin)" style="display:none;">
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+
+            <div class="form-card">
+                <h2>Iniciar Sesión</h2>
+                <form id="login-form">
+                    <input type="email" id="login-email" placeholder="Email" required>
+                    <input type="password" id="login-contrasena" placeholder="Contraseña" required>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="dashboard" style="display:none;">
+            <h2>Bienvenido, <span id="user-display-name"></span>!</h2>
+            <p>Tipo de Usuario: <span id="user-type"></span></p>
+
+            <div id="client-dashboard" style="display:none;">
+                <h3>Mis Datos</h3>
+                <p>Dirección: <span id="client-direccion"></span></p>
+                <p>Teléfono: <span id="client-telefono"></span></p>
+                <button id="edit-client-data-btn">Editar Datos</button>
+                <div id="edit-client-form" style="display:none;">
+                    <input type="text" id="edit-nombre" placeholder="Nuevo Nombre">
+                    <input type="text" id="edit-apellido" placeholder="Nuevo Apellido">
+                    <input type="email" id="edit-email" placeholder="Nuevo Email">
+                    <input type="text" id="edit-direccion" placeholder="Nueva Dirección">
+                    <input type="text" id="edit-telefono" placeholder="Nuevo Teléfono">
+                    <button id="save-client-data-btn">Guardar Cambios</button>
+                    <button id="cancel-edit-client-data-btn">Cancelar</button>
+                </div>
+
+                <h3>Realizar Nuevo Pedido</h3>
+                <form id="realizar-pedido-form">
+                    <input type="number" id="pedido-total" placeholder="Total del Pedido" required>
+                    <input type="text" id="pedido-id-envio" placeholder="ID de Envío" required>
+                    <input type="text" id="pedido-id-pago" placeholder="ID de Pago" required>
+                    <input type="text" id="pedido-imagenes" placeholder="URLs de Imágenes (separadas por coma)" required>
+                    <button type="submit">Realizar Pedido</button>
+                </form>
+
+                <h3>Historial de Pedidos</h3>
+                <ul id="pedidos-list">
+                    <li>No hay pedidos realizados aún.</li>
+                </ul>
+            </div>
+
+            <div id="admin-dashboard" style="display:none;">
+                <h3>Gestión de Administrador</h3>
+                <p>Cargo: <span id="admin-cargo"></span></p>
+                <p>Turno: <span id="admin-turno"></span></p>
+                <h4>Gestionar Usuarios Cliente</h4>
+                <div id="admin-client-list">
+                    <p>No hay clientes registrados.</p>
+                </div>
+            </div>
+
+            <button id="logout-btn">Cerrar Sesión</button>
+        </div>
+
+        <div class="important-links">
+            <h2>Enlaces Importantes</h2>
+            <ul>
+                <li><a href="#">Aviso Legal / Términos de uso</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Política de cookies</a></li>
+                <li><a href="#">Mapa del sitio</a></li>
+                <li>Dirección: Santander 1477 - Parque Chacabuco, CABA</li>
+                <li>Teléfonos: +54 (011) 4987-6543/6544 Líneas rotativas</li>
+                <li>Mail: info@soloetiquetas.com</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Copyright: 2025 | www.soloetiquetas.com | Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="scriptusuario.js"></script>
+</body>
+</html>
